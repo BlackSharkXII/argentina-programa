@@ -6,7 +6,7 @@ Cosas a tener en cuenta:
 También pueden usar .textContent, las diferencias no son importantes por ahora.
 
 3. Para evitar que el formulario <form> se “mande” y por ende recargue la página,
-al event handler “onclick”, agréguentle un return false; al final de la función.
+al event handler “onclick”, agréguenle un return false; al final de la función.
 
 Ejemplo:
 const $botonCalcular = document.querySelector("#boton-calcular");
@@ -22,6 +22,16 @@ $botonCalcular.onclick = function()
 //cuando el usuario haga click en el botón "calcular", mostrar el salario mensual
 // en una caja de texto deshabilitada. --> <input type="text" disabled id="salario-mensual"/>
 
+const $botonCalcular = document.querySelector('#calcular');
+const $salarioMensual = document.querySelector('#salario-mensual');
+
+$botonCalcular.onclick = function () {
+  const $salarioAnual = Number(document.querySelector('#salario-anual').value);
+  const salarioMensual = $salarioAnual / 12;
+  $salarioMensual.value = salarioMensual;
+  return false;
+};
+
 //TAREA: En otro archivo html (no Index) y otro archivo js (no tarea-clase-5.js),
 // creá un formulario que capture el primer nombre, segundo nombre, apellido/s y edad del usuario
 // también vamos a crear un <h1> que diga Bienvenido!
@@ -31,7 +41,7 @@ $botonCalcular.onclick = function()
 
 /*
 Ejemplo form:
-  <form id="entrada-bar" onsubmit="return false;">
+  <form id="entrada-bar" onsubmit="return false;">a
     <input type="text" placeholder="Ingresá tu nombre" id="nombre-usuario"/>
     <input type="number" placeholder="Ingresá tu edad" id="edad-usuario" />
     <input type="submit" value="Ingresar" id="ingresar"/>
