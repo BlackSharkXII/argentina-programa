@@ -1,5 +1,7 @@
-$botonCalcular = document.querySelector('#boton-calcular');
+const $botonCalcular = document.querySelector('#boton-calcular');
 
-$botonCalcular.onClick() = function(){
-  return false
-}
+$botonCalcular.onclick = function () {
+    const $mensajeResultado = document.querySelector('#mensaje-resultado');
+    $mensajeResultado.innerHTML = 'Las clases duran en total: ';
+    return false;
+};
