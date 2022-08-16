@@ -1,12 +1,5 @@
 // Obtenemos los valores de los li y lo ponemos en un array.
 
-function convertirEnArray(elemento) {
-    const arrayLi = [...document.querySelectorAll(elemento)].map((element) =>
-        Number(element.innerText)
-    );
-    return arrayLi;
-}
-
 // Obtener número el promedio
 
 function numeroPromedio(array) {
@@ -15,6 +8,7 @@ function numeroPromedio(array) {
         valorSuma += array[i];
     }
     const promedio = valorSuma / array.length;
+    return promedio;
 }
 
 // Obtener el número más pequeño
@@ -26,6 +20,7 @@ function numeroMasChico(array) {
             valorMenor = array[i];
         }
     }
+    return valorMenor;
 }
 
 // Obtener el número más grande
@@ -37,6 +32,7 @@ function numeroMasGrande(array) {
             valorMayor = array[i];
         }
     }
+    return valorMayor;
 }
 
 // Obtener el número que más se repite
@@ -58,6 +54,25 @@ function numeroQueMasRepite(array) {
             numeroQueRepite = p;
         }
     });
-
-    console.log(numeroQueRepite);
+    return numeroQueRepite;
 }
+
+const $botonCalcular = document.querySelector('#boton-calcular');
+
+$botonCalcular.onclick = function () {
+    const arrayLi = [...document.querySelectorAll('li')].map((element) =>
+        Number(element.innerText)
+    );
+
+    const $numeroPromedio = document.querySelector('#numero-promedio');
+    $numeroPromedio.innerText = Math.trunc(numeroPromedio(arrayLi));
+
+    const $numeroPequeno = document.querySelector('#numero-pequeno');
+    $numeroPequeno.innerText = numeroMasChico(arrayLi);
+
+    const $numeroGrande = document.querySelector('#numero-grande');
+    $numeroGrande.innerText = numeroMasGrande(arrayLi);
+
+    const $numeroFrecuente = document.querySelector('#numero-frecuente');
+    $numeroFrecuente.innerText = numeroQueMasRepite(arrayLi);
+};
