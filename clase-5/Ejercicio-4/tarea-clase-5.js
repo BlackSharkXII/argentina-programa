@@ -1,5 +1,3 @@
-// Obtenemos los valores de los li y lo ponemos en un array.
-
 // Obtener número el promedio
 
 function numeroPromedio(array) {
@@ -8,7 +6,7 @@ function numeroPromedio(array) {
         valorSuma += array[i];
     }
     const promedio = valorSuma / array.length;
-    return promedio;
+    return Math.trunc(promedio);
 }
 
 // Obtener el número más pequeño
@@ -65,7 +63,7 @@ $botonCalcular.onclick = function () {
     );
 
     const $numeroPromedio = document.querySelector('#numero-promedio');
-    $numeroPromedio.innerText = Math.trunc(numeroPromedio(arrayLi));
+    $numeroPromedio.innerText = numeroPromedio(arrayLi);
 
     const $numeroPequeno = document.querySelector('#numero-pequeno');
     $numeroPequeno.innerText = numeroMasChico(arrayLi);
