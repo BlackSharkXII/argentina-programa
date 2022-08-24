@@ -74,10 +74,10 @@ $botonEnviar.onclick = function (integrantesFamilia) {
 
 const $botonCalcular = document.querySelector('#boton-calcular');
 
-$botonCalcular.onclick = function () {
-    const arrayEdades = [
-        ...document.querySelectorAll('.pregunta-edad-input'),
-    ].map((element) => Number(element.value));
+$botonCalcular.onclick = function (arrayEdades) {
+    arrayEdades = [...document.querySelectorAll('.pregunta-edad-input')].map(
+        (element) => Number(element.value)
+    );
 
     $labelResultadoMayor = document.querySelector('#resultado-mayor');
     $labelResultadoMayor.innerText = numeroMasGrande(arrayEdades);
@@ -93,16 +93,16 @@ $botonCalcular.onclick = function () {
 
 const $botonRestablecer = document.querySelector('#boton-restablecer');
 
-$botonRestablecer.onclick = function () {
-    const labelCreado = [...document.querySelectorAll('.label-creado')].map(
+$botonRestablecer.onclick = function (labelCreado, inputCreado, brCreado) {
+    labelCreado = [...document.querySelectorAll('.label-creado')].map(
         (element) => element.remove()
     );
 
-    const inputCreado = [
-        ...document.querySelectorAll('.pregunta-edad-input'),
-    ].map((element) => element.remove());
-
-    const brCreado = [...document.querySelectorAll('.br-creado')].map(
+    inputCreado = [...document.querySelectorAll('.pregunta-edad-input')].map(
         (element) => element.remove()
+    );
+
+    brCreado = [...document.querySelectorAll('.br-creado')].map((element) =>
+        element.remove()
     );
 };
