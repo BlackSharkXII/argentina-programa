@@ -55,9 +55,11 @@ $botonEnviar.onclick = function (integrantesFamilia) {
         $divPregunta.appendChild(labelPregunta);
         labelPregunta.id = `pregunta-edad-label-${i}`;
         labelPregunta.textContent = `Ingrese la edad de la persona ${i} `;
+        labelPregunta.className = 'label-creado';
 
         const brPregunta = document.createElement('br');
         $divPregunta.appendChild(brPregunta);
+        brPregunta.className = 'br-creado';
 
         const inputPregunta = document.createElement('input');
         $divPregunta.appendChild(inputPregunta);
@@ -85,4 +87,22 @@ $botonCalcular.onclick = function () {
 
     $labelResultadoPromedio = document.querySelector('#resultado-promedio');
     $labelResultadoPromedio.innerText = numeroPromedio(arrayEdades);
+};
+
+// Funcion para cuando se haga click en el boton "restablecer"
+
+const $botonRestablecer = document.querySelector('#boton-restablecer');
+
+$botonRestablecer.onclick = function () {
+    const labelCreado = [...document.querySelectorAll('.label-creado')].map(
+        (element) => element.remove()
+    );
+
+    const inputCreado = [
+        ...document.querySelectorAll('.pregunta-edad-input'),
+    ].map((element) => element.remove());
+
+    const brCreado = [...document.querySelectorAll('.br-creado')].map(
+        (element) => element.remove()
+    );
 };
