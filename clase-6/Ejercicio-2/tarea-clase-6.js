@@ -10,7 +10,7 @@ Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo
 (no contarlos como 0).
 */
 
-// Funcion para boton "Agregar 1 integrante"
+// Funcion para cuando se hace click en el boton "Agregar 1 integrante"
 
 const $botonAgregarIntegrante = document.querySelector(
     '#boton-agregar-integrante'
@@ -28,7 +28,6 @@ $botonAgregarIntegrante.onclick = function (
     labelCreadoIntegrante.className = 'label-creado-integrante';
 
     brCreadoIntegrante = document.createElement('br');
-    $labelIntegrantes.appendChild(brCreadoIntegrante);
 
     inputCreadoIntegrante = document.createElement('input');
     inputCreadoIntegrante.className = 'input-creado-integrante';
@@ -40,5 +39,17 @@ $botonAgregarIntegrante.onclick = function (
     for (i = 0; i <= arrayDeLabelCreados.length; i++) {
         labelCreadoIntegrante.textContent = `Ingresa el salario anual del integrante ${i}: `;
         labelCreadoIntegrante.appendChild(inputCreadoIntegrante);
+        labelCreadoIntegrante.appendChild(brCreadoIntegrante);
     }
+};
+
+// Funcion para cuando se le hace click en el boton "Quitar 1 integrante"
+
+$botonQuitarIntegrante = document.querySelector('#boton-quitar-integrante');
+
+$botonQuitarIntegrante.onclick = function (arrayDeLabelCreados) {
+    arrayDeLabelCreados = [
+        ...document.querySelectorAll('.label-creado-integrante', 'br'),
+    ].map((element) => element);
+    arrayDeLabelCreados.pop().remove();
 };
