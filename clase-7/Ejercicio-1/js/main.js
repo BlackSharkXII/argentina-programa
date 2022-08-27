@@ -10,7 +10,7 @@ function validarNombre(nombre) {
         return 'Este campo debe de tener al menos 1 caracter';
     }
 
-    if (nombre.length >= 50) {
+    if (nombre.length > 50) {
         return 'Este campo debe de tener menos de 50 caracteres';
     }
 
@@ -31,8 +31,13 @@ function validarDescripcionRegalo(descripcionRegalo) {
     }
 
     if (descripcionRegalo.length >= 100) {
-        return 'Este campo debe de tener menos de 50 caracteres';
+        return 'Este campo debe de tener menos de 100 caracteres';
     }
 
+    const expreg = /[A - z0 - 9]/;
+
+    if (expreg.test(descripcionRegalo) === false) {
+        return 'Debe de ingresar un caracter valido';
+    }
     return '';
 }
