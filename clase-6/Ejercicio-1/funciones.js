@@ -32,3 +32,19 @@ function numeroMasGrande(array) {
     }
     return valorMayor;
 }
+
+// Eliminar label input br
+
+function eliminarLabel(labelCreado, inputCreado, brCreado) {
+    labelCreado = [...document.querySelectorAll('.label-creado')].map(
+        (element) => element.remove()
+    );
+
+    inputCreado = [...document.querySelectorAll('.pregunta-edad-input')].map(
+        (element) => element.remove()
+    );
+
+    brCreado = [...document.querySelectorAll('.br-creado')].map((element) =>
+        element.remove()
+    );
+}

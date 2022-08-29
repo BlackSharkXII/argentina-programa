@@ -34,7 +34,7 @@ function validarDescripcionRegalo(descripcionRegalo) {
         return 'Este campo debe de tener menos de 100 caracteres';
     }
 
-    const expreg = /[A - z0 - 9]/;
+    const expreg = /[A - z, 0 - 9]/;
 
     if (expreg.test(descripcionRegalo) === false) {
         return 'Debe de ingresar un caracter valido';

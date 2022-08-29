@@ -10,10 +10,17 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 const $botonEnviar = document.querySelector('#boton-enviar');
 
 $botonEnviar.onclick = function (integrantesFamilia) {
+    eliminarLabel();
+
     const $divPregunta = document.querySelector('#pregunta');
+
     integrantesFamilia = Number(
         document.querySelector('#preguntar-cantidad-familia').value
     );
+
+    validarIntegrantes(integrantesFamilia);
+    probarValidarIntegrantes();
+
     for (i = 1; i <= integrantesFamilia; i++) {
         const labelPregunta = document.createElement('label');
         $divPregunta.appendChild(labelPregunta);
@@ -57,16 +64,6 @@ $botonCalcular.onclick = function (arrayEdades) {
 
 const $botonRestablecer = document.querySelector('#boton-restablecer');
 
-$botonRestablecer.onclick = function (labelCreado, inputCreado, brCreado) {
-    labelCreado = [...document.querySelectorAll('.label-creado')].map(
-        (element) => element.remove()
-    );
-
-    inputCreado = [...document.querySelectorAll('.pregunta-edad-input')].map(
-        (element) => element.remove()
-    );
-
-    brCreado = [...document.querySelectorAll('.br-creado')].map((element) =>
-        element.remove()
-    );
+$botonRestablecer.onclick = function () {
+    eliminarLabel();
 };
