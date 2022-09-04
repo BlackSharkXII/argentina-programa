@@ -10,6 +10,12 @@ function probarValidarNombre() {
         ) === 'Este campo debe de tener menos de 50 caracteres',
         'validarNombre no validó que el nombre sea menor a 50 caracteres'
     );
+
+    console.assert(
+        validarNombre('214123') ===
+            'Debe de ingresar solo letras para el nombre',
+        'validarNombre no valido que el nombre fuera solo letras'
+    );
 }
 
 probarValidarNombre();
@@ -38,7 +44,8 @@ function probarValidarDescripcion() {
         'validarDescripcionRegalo no valido que la descripcion sea menor a 100 caracteres';
 
     console.assert(
-        validarDescripcionRegalo('ñ') === 'Debe de ingresar un caracter valido',
+        validarDescripcionRegalo(',.,.,.') ===
+            'Debe de ingresar un caracter valido',
         'validarDescripcionRegalo no valido que se tenga un caracteres validos'
     );
 }
