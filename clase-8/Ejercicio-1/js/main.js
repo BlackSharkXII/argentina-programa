@@ -1,6 +1,6 @@
 function validarNombre(nombre) {
     if (nombre.length === 0) {
-        return 'Este campo debe de tener al menos 1 caracter';
+        return 'El campo de nombre debe de tener al menos 1 caracter';
     }
 
     if (nombre.length > 50) {
@@ -25,7 +25,7 @@ function validarCiudad(ciudad) {
 
 function validarDescripcionRegalo(descripcionRegalo) {
     if (descripcionRegalo.length === 0) {
-        return 'Este campo debe de tener al menos 1 caracter';
+        return 'El campo de descripcion debe de tener al menos 1 caracter';
     }
 
     if (descripcionRegalo.length >= 100) {
@@ -41,6 +41,10 @@ function validarDescripcionRegalo(descripcionRegalo) {
 }
 
 function validarFormulario(evento) {
+    [...document.querySelectorAll('#errores li')].map((element) =>
+        element.remove()
+    );
+
     const $form = document.querySelector('#carta-a-santa');
 
     const nombre = $form.nombre.value;
