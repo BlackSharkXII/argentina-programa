@@ -33,7 +33,7 @@ probarValidarCiudad();
 function probarValidarDescripcion() {
     console.assert(
         validarDescripcionRegalo('') ===
-            'Este campo de descripcion debe de tener al menos 1 caracter',
+            'El campo de descripcion debe de tener al menos 1 caracter',
         'validarDescripcionRegalo no valido que la descripcion estuviera vacia'
     );
 

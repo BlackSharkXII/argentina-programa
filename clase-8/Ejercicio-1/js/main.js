@@ -66,6 +66,14 @@ function validarFormulario(evento) {
     if (esExito) {
         $form.className = 'oculto';
         document.querySelector('#exito').className = '';
+
+        setTimeout(
+            () =>
+                redireccionarPagina(
+                    'http://127.0.0.1:5500/clase-8/Ejercicio-1/wishlist.html'
+                ),
+            5000
+        );
     }
 
     evento.preventDefault();
@@ -91,6 +99,10 @@ function manejarErrores(errores) {
         }
     });
     return cantidadErrores;
+}
+
+function redireccionarPagina(link) {
+    window.location.href = link;
 }
 
 const $form = document.querySelector('#carta-a-santa');
