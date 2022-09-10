@@ -67,11 +67,8 @@ function validarFormulario(evento) {
         $form.className = 'oculto';
         document.querySelector('#exito').className = '';
 
-        setTimeout(
-            () =>
-                redireccionarPagina(
-                    'http://127.0.0.1:5500/clase-8/Ejercicio-1/wishlist.html'
-                ),
+        redireccionarPaginaConTiempo(
+            'http://127.0.0.1:5500/clase-8/Ejercicio-1/wishlist.html',
             5000
         );
     }
@@ -101,8 +98,8 @@ function manejarErrores(errores) {
     return cantidadErrores;
 }
 
-function redireccionarPagina(link) {
-    window.location.href = link;
+function redireccionarPaginaConTiempo(link, tiempo) {
+    setTimeout(() => (window.location.href = link), tiempo);
 }
 
 const $form = document.querySelector('#carta-a-santa');
