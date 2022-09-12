@@ -11,6 +11,7 @@ $botonEnviar.onclick = function (integrantesFamilia) {
 
     validarIntegrantes(integrantesFamilia);
     probarValidarIntegrantes();
+    manejoErrorIntegrante(integrantesFamilia);
 
     for (i = 1; i <= integrantesFamilia; i++) {
         const labelPregunta = document.createElement('label');
