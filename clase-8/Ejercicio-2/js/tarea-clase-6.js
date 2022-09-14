@@ -1,6 +1,6 @@
-// Funcion para cuando se haga click en el boton "enviar"
-
 const $botonCalcular = document.querySelector('#boton-calcular');
+const $divSeccionPregunta = document.querySelector('#seccion-pregunta');
+const $divSeccionEdades = document.querySelector('#seccion-edades');
 
 $botonCalcular.onclick = function (arrayEdades) {
     arrayEdades = [...document.querySelectorAll('.pregunta-edad-input')].map(
@@ -15,12 +15,4 @@ $botonCalcular.onclick = function (arrayEdades) {
 
     $labelResultadoPromedio = document.querySelector('#resultado-promedio');
     $labelResultadoPromedio.innerText = numeroPromedio(arrayEdades);
-};
-
-// Funcion para cuando se haga click en el boton "restablecer"
-
-const $botonRestablecer = document.querySelector('#boton-restablecer');
-
-$botonRestablecer.onclick = function () {
-    eliminarLabel();
 };
