@@ -27,16 +27,20 @@ function numeroMasGrande(array) {
     return valorMayor;
 }
 
-function eliminarLabel(labelCreado, inputCreado, brCreado) {
+function eliminarLabel(labelCreado, inputCreado, brCreado, liCreado) {
     labelCreado = [...document.querySelectorAll('.label-creado')].map(
         (element) => element.remove()
     );
 
-    inputCreado = [...document.querySelectorAll('.pregunta-edad-input')].map(
+    inputCreado = [...document.querySelectorAll('.input-creado, .error')].map(
         (element) => element.remove()
     );
 
     brCreado = [...document.querySelectorAll('.br-creado')].map((element) =>
+        element.remove()
+    );
+
+    liCreado = [...document.querySelectorAll('.li-creado')].map((element) =>
         element.remove()
     );
 }

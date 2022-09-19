@@ -1,7 +1,10 @@
 const $botonRestablecer = document.querySelector('#boton-restablecer');
+const $divSeccionPregunta = document.querySelector('#seccion-pregunta');
+const $divSeccionEdades = document.querySelector('#seccion-edades');
 
 $botonRestablecer.onclick = function () {
     eliminarLabel();
+
     $divSeccionPregunta.className = '';
     $divSeccionEdades.className = 'oculto';
 

@@ -28,8 +28,8 @@ $botonEnviar.onclick = function (integrantesFamilia) {
 
         const inputPregunta = document.createElement('input');
         $labelInputEdades.appendChild(inputPregunta);
-        inputPregunta.className = `pregunta-edad-input`;
-        inputPregunta.type = 'number';
+        inputPregunta.id = `pregunta-edad-input-${i}`;
+        inputPregunta.className = 'input-creado';
 
         $labelInputEdades.appendChild(brPregunta);
 

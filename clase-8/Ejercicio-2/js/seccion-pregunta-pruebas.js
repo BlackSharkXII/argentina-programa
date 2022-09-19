@@ -6,7 +6,7 @@ function validarIntegrantes(integrante) {
     const expreg = /^[0-9]+$/;
 
     if (expreg.test(integrante) === false) {
-        return 'Este campo solo acepta numeros';
+        return 'Solo se acepta numeros';
     }
 
     return '';
@@ -20,7 +20,7 @@ function probarValidarIntegrantes() {
     );
 
     console.assert(
-        validarIntegrantes('a') === 'Este campo solo acepta numeros',
+        validarIntegrantes('a') === 'Solo se acepta numeros',
         'No se pudo validar que solo se ingresara los numeros'
     );
 }
