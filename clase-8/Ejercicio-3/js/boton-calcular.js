@@ -10,6 +10,8 @@ $botonCalcular.onclick = function (arraySalarioAnual) {
         .filter((element) => element.length > 0)
         .map((element) => Number(element));
 
+    validarSalarios(arraySalarioAnual);
+
     $labelSalarioAnualMayor = document.querySelector('#salario-anual-mayor');
     $labelSalarioAnualMayor.innerText =
         '$ ' + numeroMasGrande(arraySalarioAnual);

@@ -20,7 +20,6 @@ $botonAgregarIntegrante.onclick = function (
 
     inputCreadoIntegrante = document.createElement('input');
     inputCreadoIntegrante.className = 'input-creado-integrante';
-    inputCreadoIntegrante.type = 'number';
 
     arrayDeLabelCreados = [
         ...document.querySelectorAll('.label-creado-integrante'),
