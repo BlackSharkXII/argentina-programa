@@ -7,7 +7,7 @@ function numeroPromedio(array) {
     return Math.trunc(promedio);
 }
 
-function numeroMasChico(array) {
+function obtenerNumeroMasChico(numeros) {
     let valorMenor = array[0];
     for (let i = 0; i < array.length; i++) {
         if (valorMenor >= array[i]) {
