@@ -1,18 +1,17 @@
 const $botonCalcular = document.querySelector('#boton-calcular');
 
-$botonCalcular.onclick = function (arrayEdades) {
-    liCreado = [...document.querySelectorAll('.li-creado')].map((element) =>
-        element.remove()
+$botonCalcular.onclick = function () {
+    const liCreado = [...document.querySelectorAll('.li-creado')].map(
+        (element) => element.remove()
     );
-    const $inputCreadosError = document.querySelectorAll('.error');
-
-    $inputCreadosError.forEach((input) => {
-        input.className = 'input-creado';
-    });
-
-    arrayEdades = [...document.querySelectorAll('.input-creado')].map(
+    const $inputsCreadosError = document.querySelectorAll('.error');
+    const edades = [...document.querySelectorAll('.input-creado')].map(
         (element) => Number(element.value)
     );
 
-    manejoErrorEdades(arrayEdades);
+    $inputsCreadosError.forEach((input) => {
+        input.className = 'input-creado';
+    });
+
+    manejarErrorEdades(edades);
 };

@@ -1,4 +1,4 @@
-function manejoErrorEdades(arrayEdades, $inputCreadosEdades) {
+function manejarErrorEdades(edades) {
     $inputCreadosEdades = document.querySelectorAll('.input-creado');
     const $labelResultadoMayor = document.querySelector('#resultado-mayor');
     const $labelResultadoMenor = document.querySelector('#resultado-menor');
@@ -7,7 +7,7 @@ function manejoErrorEdades(arrayEdades, $inputCreadosEdades) {
     );
     let cantidadErrores = 0;
 
-    arrayEdades.forEach((element) => {
+    edades.forEach((element) => {
         mensajeError = validarEdades(element);
         $labelErrores = document.querySelector('#mensaje-error-edades');
         $inputCreadosEdades = document.querySelectorAll('.input-creado');
@@ -39,8 +39,8 @@ function manejoErrorEdades(arrayEdades, $inputCreadosEdades) {
         $labelResultadoMenor.innerText = 'Error';
         $labelResultadoPromedio.innerText = 'Error';
     } else {
-        $labelResultadoMayor.innerText = numeroMasGrande(arrayEdades);
-        $labelResultadoMenor.innerText = numeroMasChico(arrayEdades);
-        $labelResultadoPromedio.innerText = numeroPromedio(arrayEdades);
+        $labelResultadoMayor.innerText = obtenerNumeroMasGrande(edades);
+        $labelResultadoMenor.innerText = obtenerNumeroMasChico(edades);
+        $labelResultadoPromedio.innerText = obtenerNumeroPromedio(edades);
     }
 }

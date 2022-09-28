@@ -1,39 +1,36 @@
 const $botonEnviar = document.querySelector('#boton-enviar');
 
-$botonEnviar.onclick = function (integrantesFamilia) {
+$botonEnviar.onclick = function () {
     eliminarLabel();
 
-    const $divSeccionPregunta = document.querySelector('#seccion-pregunta');
-    const $divSeccionEdades = document.querySelector('#seccion-edades');
+    const $seccionPregunta = document.querySelector('#seccion-pregunta');
+    const $seccionEdades = document.querySelector('#seccion-edades');
     const $labelInputEdades = document.querySelector('#label-input-edades');
-
-    integrantesFamilia = Number(
+    const cantidadFamiliares = Number(
         document.querySelector('#preguntar-cantidad-familia').value
     );
 
-    validarIntegrantes(integrantesFamilia);
-    probarValidarIntegrantes();
-    manejoErrorIntegrante(integrantesFamilia);
+    manejarErrorIntegrante(cantidadFamiliares);
 
-    for (i = 1; i <= integrantesFamilia; i++) {
-        const labelPregunta = document.createElement('label');
-        $labelInputEdades.appendChild(labelPregunta);
-        labelPregunta.id = `pregunta-edad-label-${i}`;
-        labelPregunta.textContent = `Ingrese la edad de la persona ${i} `;
-        labelPregunta.className = 'label-creado';
+    for (i = 1; i <= cantidadFamiliares; i++) {
+        const textoPregunta = document.createElement('label');
+        $labelInputEdades.appendChild(textoPregunta);
+        textoPregunta.id = `pregunta-edad-label-${i}`;
+        textoPregunta.textContent = `Ingrese la edad de la persona ${i} `;
+        textoPregunta.className = 'label-creado';
 
-        const brPregunta = document.createElement('br');
-        $labelInputEdades.appendChild(brPregunta);
-        brPregunta.className = 'br-creado';
+        const espaciadoPregunta = document.createElement('br');
+        $labelInputEdades.appendChild(espaciadoPregunta);
+        espaciadoPregunta.className = 'br-creado';
 
-        const inputPregunta = document.createElement('input');
-        $labelInputEdades.appendChild(inputPregunta);
-        inputPregunta.id = `pregunta-edad-input-${i}`;
-        inputPregunta.className = 'input-creado';
+        const preguntaEdad = document.createElement('input');
+        $labelInputEdades.appendChild(preguntaEdad);
+        preguntaEdad.id = `pregunta-edad-input-${i}`;
+        preguntaEdad.className = 'input-creado';
 
-        $labelInputEdades.appendChild(brPregunta);
+        $labelInputEdades.appendChild(espaciadoPregunta);
 
-        $divSeccionPregunta.className = 'oculto';
-        $divSeccionEdades.className = '';
+        $seccionPregunta.className = 'oculto';
+        $seccionEdades.className = '';
     }
 };

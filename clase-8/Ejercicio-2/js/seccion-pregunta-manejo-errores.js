@@ -1,4 +1,4 @@
-function manejoErrorIntegrante(integrantesFamilia) {
+function manejarErrorIntegrante(integrantesFamilia) {
     mensajeError = validarIntegrantes(integrantesFamilia);
     $labelErrores = document.querySelector('#mensaje-error-pregunta');
 
