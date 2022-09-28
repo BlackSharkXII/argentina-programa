@@ -1,5 +1,5 @@
 function numeroPromedio(numeros) {
-    let valorSuma = 0;
+    let acumulador = 0;
     for (let i = 0; i < array.length; i++) {
         valorSuma += array[i];
     }
