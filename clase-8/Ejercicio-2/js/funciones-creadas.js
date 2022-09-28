@@ -1,31 +1,17 @@
-<<<<<<< Updated upstream
-function numeroPromedio(numeros) {
+function obtenerNumeroPromedio(numeros) {
     let acumulador = 0;
     for (let i = 0; i < array.length; i++) {
         valorSuma += array[i];
-=======
-function obtenerNumeroPromedio(numeros) {
-    let acumulador = 0;
-    for (let i = 0; i < numeros.length; i++) {
-        acumulador += numeros[i];
->>>>>>> Stashed changes
     }
     const promedio = acumulador / numeros.length;
     return Math.trunc(promedio);
 }
 
 function obtenerNumeroMasChico(numeros) {
-<<<<<<< Updated upstream
-    let valorMenor = array[0];
-    for (let i = 0; i < array.length; i++) {
-        if (valorMenor >= array[i]) {
-            valorMenor = array[i];
-=======
     let numeroMasChico = numeros[0];
     for (let i = 0; i < numeros.length; i++) {
         if (numeroMasChico >= numeros[i]) {
             numeroMasChico = numeros[i];
->>>>>>> Stashed changes
         }
     }
     return numeroMasChico;
