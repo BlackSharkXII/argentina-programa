@@ -8,9 +8,9 @@ function manejarErrorEdades(edades) {
     let cantidadErrores = 0;
 
     edades.forEach((element) => {
-        mensajeError = validarEdades(element);
-        $labelErrores = document.querySelector('#mensaje-error-edades');
-        $inputCreadosEdades = document.querySelectorAll('.input-creado');
+        const mensajeError = validarEdades(element);
+        const $labelErrores = document.querySelector('#mensaje-error-edades');
+        const $inputCreadosEdades = document.querySelectorAll('.input-creado');
 
         if (mensajeError === '') {
             return '';

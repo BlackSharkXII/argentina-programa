@@ -1,7 +1,7 @@
 function obtenerNumeroPromedio(numeros) {
     let acumulador = 0;
-    for (let i = 0; i < array.length; i++) {
-        valorSuma += array[i];
+    for (let i = 0; i < numeros.length; i++) {
+        acumulador += numeros[i];
     }
     const promedio = acumulador / numeros.length;
     return Math.trunc(promedio);
@@ -27,20 +27,42 @@ function obtenerNumeroMasGrande(numeros) {
     return numeroMasGrande;
 }
 
-function eliminarLabel(labelCreado, inputCreado, brCreado, liCreado) {
-    labelCreado = [...document.querySelectorAll('.label-creado')].map(
+function eliminarLabel() {
+    const labelCreado = [...document.querySelectorAll('.label-creado')].map(
         (element) => element.remove()
     );
 
-    inputCreado = [...document.querySelectorAll('.input-creado, .error')].map(
+    const inputCreado = [...document.querySelectorAll('.input-creado')].map(
         (element) => element.remove()
     );
 
-    brCreado = [...document.querySelectorAll('.br-creado')].map((element) =>
-        element.remove()
+    const brCreado = [...document.querySelectorAll('.br-creado')].map(
+        (element) => element.remove()
     );
 
-    liCreado = [...document.querySelectorAll('.li-creado')].map((element) =>
-        element.remove()
+    const liCreado = [...document.querySelectorAll('.li-creado')].map(
+        (element) => element.remove()
+    );
+}
+
+function eliminarMensajesErroresRepetidos() {
+    const $mensajesError = [...document.querySelectorAll('li')].map(
+        (element) => {
+            if (element.className == 'li-creado') {
+                element.remove();
+            }
+        }
+    );
+}
+
+function cambiarClaseError() {
+    const $entradasConError = [...document.querySelectorAll('input')].map(
+        (element) => {
+            if (element.className == 'error') {
+                element.className = 'input-creado';
+            } else {
+                return '';
+            }
+        }
     );
 }

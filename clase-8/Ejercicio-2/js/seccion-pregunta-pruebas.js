@@ -1,5 +1,5 @@
 function validarIntegrantes(integrante) {
-    if (integrante.length === 0) {
+    if (integrante == 0) {
         return 'Este campo debe de tener minimo un caracter';
     }
 

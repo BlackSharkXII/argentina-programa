@@ -1,7 +1,13 @@
-const $botonEnviar = document.querySelector('#boton-enviar');
+const $enviar = document.querySelector('#boton-enviar');
 
-$botonEnviar.onclick = function () {
+$enviar.onclick = function () {
     eliminarLabel();
+    const $entradaConError = document.querySelector(
+        '#preguntar-cantidad-familia'
+    );
+    if ($entradaConError.className == 'error') {
+        $entradaConError.className = '';
+    }
 
     const $seccionPregunta = document.querySelector('#seccion-pregunta');
     const $seccionEdades = document.querySelector('#seccion-edades');

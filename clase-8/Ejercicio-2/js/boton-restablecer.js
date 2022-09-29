@@ -1,19 +1,24 @@
 const $botonRestablecer = document.querySelector('#boton-restablecer');
-const $divSeccionPregunta = document.querySelector('#seccion-pregunta');
-const $divSeccionEdades = document.querySelector('#seccion-edades');
 
 $botonRestablecer.onclick = function () {
     eliminarLabel();
 
-    $divSeccionPregunta.className = '';
-    $divSeccionEdades.className = 'oculto';
+    const $seccionPregunta = document.querySelector('#seccion-pregunta');
+    $seccionPregunta.className = '';
 
-    $labelResultadoMayor = document.querySelector('#resultado-mayor');
-    $labelResultadoMayor.innerText = '';
+    const $seccionEdades = document.querySelector('#seccion-edades');
+    $seccionEdades.className = 'oculto';
 
-    $labelResultadoMenor = document.querySelector('#resultado-menor');
-    $labelResultadoMenor.innerText = '';
+    const $resultadoMayor = document.querySelector('#resultado-mayor');
+    $resultadoMayor.innerText = '';
 
-    $labelResultadoPromedio = document.querySelector('#resultado-promedio');
-    $labelResultadoPromedio.innerText = '';
+    const $resultadoMenor = document.querySelector('#resultado-menor');
+    $resultadoMenor.innerText = '';
+
+    const $resultadoPromedio = document.querySelector('#resultado-promedio');
+    $resultadoPromedio.innerText = '';
+
+    const elementoError = [...document.querySelectorAll('.error')].map(
+        (element) => element.remove()
+    );
 };
