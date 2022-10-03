@@ -1,28 +1,28 @@
-function numeroPromedio(array) {
-    let valorSuma = 0;
-    for (let i = 0; i < array.length; i++) {
-        valorSuma += array[i];
+function obtenerNumeroPromedio(numeros) {
+    let acumulador = 0;
+    for (let i = 0; i < numeros.length; i++) {
+        acumulador += numeros[i];
     }
-    const promedio = valorSuma / array.length;
+    const promedio = acumulador / numeros.length;
     return Math.trunc(promedio);
 }
 
-function numeroMasChico(array) {
-    let valorMenor = array[0];
-    for (let i = 0; i < array.length; i++) {
-        if (valorMenor >= array[i]) {
-            valorMenor = array[i];
+function obtenerNumeroMasChico(numeros) {
+    let numeroMasChico = numeros[0];
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeroMasChico >= numeros[i]) {
+            numeroMasChico = numeros[i];
         }
     }
-    return valorMenor;
+    return numeroMasChico;
 }
 
-function numeroMasGrande(array) {
-    let valorMayor = array[0];
-    for (let i = 0; i < array.length; i++) {
-        if (valorMayor <= array[i]) {
-            valorMayor = array[i];
+function obtenerNumeroMasGrande(numeros) {
+    let numeroMasGrande = numeros[0];
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeroMasGrande <= numeros[i]) {
+            numeroMasGrande = numeros[i];
         }
     }
-    return valorMayor;
+    return numeroMasGrande;
 }

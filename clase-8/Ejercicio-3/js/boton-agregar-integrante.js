@@ -1,32 +1,26 @@
-const $botonAgregarIntegrante = document.querySelector(
-    '#boton-agregar-integrante'
-);
+const $agregarIntegrante = document.querySelector('#boton-agregar-integrante');
 
-$botonAgregarIntegrante.onclick = function (
-    inputCreadoIntegrante,
-    labelCreadoIntegrante,
-    brCreadoIntegrante
-) {
-    $divSalario = document.querySelector('#div-salario');
-    $divSalario.className = '';
+$agregarIntegrante.onclick = function () {
+    const $seccionSalario = document.querySelector('#div-salario');
+    $seccionSalario.className = '';
 
-    labelCreadoIntegrante = document.createElement('label');
-    labelCreadoIntegrante.className = 'label-creado-integrante';
+    const seccionIntegrante = document.createElement('label');
+    seccionIntegrante.className = 'label-creado-integrante';
 
-    $labelIntegrantes = document.querySelector('#label-integrantes');
-    $labelIntegrantes.appendChild(labelCreadoIntegrante);
+    const $textoIntegrante = document.querySelector('#label-integrantes');
+    $textoIntegrante.appendChild(seccionIntegrante);
 
-    brCreadoIntegrante = document.createElement('br');
+    const espaciadoIntegrante = document.createElement('br');
 
-    inputCreadoIntegrante = document.createElement('input');
-    inputCreadoIntegrante.className = 'input-creado-integrante';
+    const entradaIntegrante = document.createElement('input');
+    entradaIntegrante.className = 'input-creado-integrante';
 
-    arrayDeLabelCreados = [
+    const integrantesCreados = [
         ...document.querySelectorAll('.label-creado-integrante'),
     ].map((element) => element);
-    for (i = 0; i <= arrayDeLabelCreados.length; i++) {
-        labelCreadoIntegrante.textContent = `Ingresa el salario anual del integrante ${i}: `;
-        labelCreadoIntegrante.appendChild(inputCreadoIntegrante);
-        labelCreadoIntegrante.appendChild(brCreadoIntegrante);
+    for (i = 0; i <= integrantesCreados.length; i++) {
+        seccionIntegrante.textContent = `Ingresa el salario anual del integrante ${i}: `;
+        seccionIntegrante.appendChild(entradaIntegrante);
+        seccionIntegrante.appendChild(espaciadoIntegrante);
     }
 };

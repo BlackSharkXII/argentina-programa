@@ -1,7 +1,7 @@
 function validarSalarios(salario) {
     const expreg = /^[0-9]+$/;
 
-    if (salario.length === 0) {
+    if (salario == 0) {
         return 'Este campo debe de tener minimo un caracter';
     }
 

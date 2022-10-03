@@ -1,34 +1,20 @@
-$botonCalcular = document.querySelector('#boton-calcular');
+const $calcular = document.querySelector('#boton-calcular');
 
-$botonCalcular.onclick = function (arraySalarioAnual) {
-    const MESESANIO = 12;
+$calcular.onclick = function () {
+    const $entradasIntegranteError = [...document.querySelectorAll('.error')];
+    const $mensajesError = [...document.querySelectorAll('li')];
 
-    arraySalarioAnual = [
+    $entradasIntegranteError.forEach((element) => {
+        element.className = 'input-creado-integrante';
+    });
+
+    $mensajesError.forEach((element) => {
+        element.remove();
+    });
+
+    const salarioAnual = [
         ...document.querySelectorAll('.input-creado-integrante'),
-    ]
-        .map((element) => element.value)
-        .filter((element) => element.length > 0)
-        .map((element) => Number(element));
+    ].map((element) => Number(element.value));
 
-    validarSalarios(arraySalarioAnual);
-
-    $labelSalarioAnualMayor = document.querySelector('#salario-anual-mayor');
-    $labelSalarioAnualMayor.innerText =
-        '$ ' + numeroMasGrande(arraySalarioAnual);
-
-    $labelSalarioAnualMenor = document.querySelector('#salario-anual-menor');
-    $labelSalarioAnualMenor.innerText =
-        '$ ' + numeroMasChico(arraySalarioAnual);
-
-    $labelSalarioPromedioAnual = document.querySelector(
-        '#salario-anual-promedio'
-    );
-    $labelSalarioPromedioAnual.innerText =
-        '$ ' + numeroPromedio(arraySalarioAnual);
-
-    $labelSalarioPromedioMensual = document.querySelector(
-        '#salario-mensual-promedio'
-    );
-    $labelSalarioPromedioMensual.innerText =
-        '$ ' + Math.trunc(numeroPromedio(arraySalarioAnual) / MESESANIO);
+    manejarErroresSalarios(salarioAnual);
 };

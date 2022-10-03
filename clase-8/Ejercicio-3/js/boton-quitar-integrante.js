@@ -1,15 +1,17 @@
-$botonQuitarIntegrante = document.querySelector('#boton-quitar-integrante');
+const $quitarIntegrante = document.querySelector('#boton-quitar-integrante');
 
-$botonQuitarIntegrante.onclick = function (arrayDeLabelCreados) {
-    $divSalario = document.querySelector('#div-salario');
-
-    arrayDeLabelCreados = [
+$quitarIntegrante.onclick = function () {
+    const $seccionSalario = document.querySelector('#div-salario');
+    const integrantesCreados = [
         ...document.querySelectorAll('.label-creado-integrante', 'br'),
-    ].map((element) => element);
-    arrayDeLabelCreados.pop().remove();
+    ];
+    const $mensajesError = [...document.querySelectorAll('li')];
 
-    if (arrayDeLabelCreados.length === 0) {
-        $divSalario.className = 'oculto';
+    integrantesCreados.pop().remove();
+    $mensajesError.pop().remove();
+
+    if (integrantesCreados.length === 0) {
+        $seccionSalario.className = 'oculto';
     } else {
         return '';
     }
