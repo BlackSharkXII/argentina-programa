@@ -1,0 +1,24 @@
+{
+  "name": "simon-dice",
+  "version": "1.0.0",
+  "description": "Juego de Simon Dice para el curso de r/Argentina Programa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlackSharkXII/r-argentina-programa.git"
+  },
+  "author": "Braian Perdomo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlackSharkXII/r-argentina-programa/issues"
+  },
+  "homepage": "https://github.com/BlackSharkXII/r-argentina-programa#readme",
+  
+  "dependencies": {
+    "bootstrap": "^5.2.2"
+  }
+}
+
